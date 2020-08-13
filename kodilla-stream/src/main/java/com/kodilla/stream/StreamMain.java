@@ -1,3 +1,6 @@
 package com.kodilla.stream;
 
-public class StreamMain implements ArrayOperations{
+import com.kodilla.stream.array.ArrayOperations;
+
+public class StreamMain implements ArrayOperations {
+}

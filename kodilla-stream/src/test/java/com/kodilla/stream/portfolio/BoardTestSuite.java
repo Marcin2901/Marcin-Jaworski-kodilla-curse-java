@@ -95,6 +95,7 @@ public class BoardTestSuite {
                 .filter(s -> s.getAssignedUser().equals(user))
                 .collect(toList());
 
+
       //Then
         Assert.assertEquals(2, list.size());
         Assert.assertEquals(user, list.get(0).getAssignedUser());
