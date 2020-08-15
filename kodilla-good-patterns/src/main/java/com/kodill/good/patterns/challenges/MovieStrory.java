@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public final class MovieStrory {
@@ -41,10 +42,11 @@ public final class MovieStrory {
 
 
 
-           map.values().stream()
-                   .map(s ->  s + " ! ")
-                   .forEach(System.out::print);
+         String result =  map.values().stream()
+                   .map(List :: toString)
+                   .collect(Collectors.joining(" ! "));
 
+            System.out.println(result);
 
 
 
