@@ -12,20 +12,21 @@ public class FlightSearch {
         Map<Flight, Boolean> flights = new HashMap<>();
         flights = FlightData.makeDateOfFlight();
 
-        try{
             for(int i=0; i<flights.size(); i++){
                 if(flights.containsKey(flight))
                     return flights.get(flight);
-                return flights.get(flight);
             }
+        try{
+            return flights.get(flight);
         }
+
         catch (Exception e){
             throw new RouteNotFoundException();
 
         }
 
 
-        return false;
+      //  return false;
     }
 
 
