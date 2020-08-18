@@ -1,6 +1,6 @@
 package com.kodilla.exception.test;
 
-import sun.reflect.annotation.ExceptionProxy;
+
 
 public class SecondChallenge {
     public String probablyWillTgrowException(double x, double y) throws Exception {

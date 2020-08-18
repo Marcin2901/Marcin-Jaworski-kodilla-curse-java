@@ -47,7 +47,7 @@ public class BoardTestSuite {
                 "Archive data searching has to be oprimized",
                 user4,
                 user2,
-                LocalDate.now(),
+                LocalDate.now().minusDays(15),
                 LocalDate.now().plusDays(5));
         Task task6 = new Task("Use Streams",
                 "use Streams rather thsn for-loops in predictions",
@@ -135,7 +135,7 @@ public class BoardTestSuite {
                 .filter(s -> s.compareTo(LocalDate.now().minusDays(10))<=0)
                 .count();
 
-        Assert.assertEquals(2, longTasks);
+        Assert.assertEquals(3, longTasks);
     }
 
     @Test
@@ -150,17 +150,15 @@ public class BoardTestSuite {
        List<Integer> days = project.getTaskLists().stream()
                 .filter(list::contains)
                 .flatMap(s -> s.getTasks().stream())
-                .map(s ->  LocalDate.now().getDayOfMonth()-s.getCreated().getDayOfMonth())
-                .collect(toList());
-                //.reduce(0, (sum,current) -> sum = sum+current);
+                       .map(s ->  LocalDate.now().minusDays(s.getCreated().getDayOfMonth()).getDayOfMonth())
+                       .collect(toList());
 
-
-        double a= IntStream.range(0, days.size())
+       double a= IntStream.range(0, days.size())
                 .map(s -> s=days.get(s))
                 .average().getAsDouble();
 
            //Then
-             Assert.assertEquals(10.00, a, 0.001);
+             Assert.assertEquals(15.00, a, 0.001);
 
     }
 
