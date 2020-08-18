@@ -43,5 +43,25 @@ public class SpringRunnerTestSuite {
 
     }
 
+    @Test
+    public void testSquareLoadedIntoContainer(){
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Shape shape = (Shape)context.getBean("createSquare");
+        //When
+       String name = shape.getShapeName();
+        //Then
+       Assert.assertEquals("This is Square", name);
+    }
+
+    @Test
+    public void testShapeLoadedIntoContainer(){
+        //Give
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Shape shape = (Shape)context.getBean("chosenShape");
+        //When
+        String name = shape.getShapeName();
+        System.out.println("Chosen shape is: " + name);
+    }
 
 }
