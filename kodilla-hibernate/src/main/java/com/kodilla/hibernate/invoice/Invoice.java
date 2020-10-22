@@ -17,9 +17,8 @@ public class Invoice {
     public Invoice() {
     }
 
-    public Invoice(String number, List<Item> items) {
+    public Invoice(String number) {
         this.number = number;
-        this.items = items;
     }
     @Id
     @NotNull
@@ -36,7 +35,7 @@ public class Invoice {
             targetEntity = Item.class,
             mappedBy = "invoice",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER)
+            fetch = FetchType.LAZY)
     public List<Item> getItems() {
         return items;
     }
