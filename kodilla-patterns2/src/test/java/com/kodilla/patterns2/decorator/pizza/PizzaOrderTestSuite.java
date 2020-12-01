@@ -2,7 +2,7 @@ package com.kodilla.patterns2.decorator.pizza;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
+// 20.2
 public class PizzaOrderTestSuite {
     @Test
     public void testPizzaExtraCheesCost() {
