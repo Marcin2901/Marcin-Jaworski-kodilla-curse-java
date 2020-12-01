@@ -5,6 +5,7 @@ import com.kodilla.patterns2.observator.homework.QueueExercise;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+//20.4
 public class QueueExerciseTestSuite {
 
     @Test
